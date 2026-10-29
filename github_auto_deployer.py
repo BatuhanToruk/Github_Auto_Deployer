@@ -22,7 +22,6 @@ CONFIG_DIR = os.path.join(os.path.expanduser("~"), ".github_pro_studio")
 CONFIG_FILE = os.path.join(CONFIG_DIR, "config.json")
 HISTORY_FILE = os.path.join(CONFIG_DIR, "history.json")
 
-# GITHUB API ANAHTARINI (TOKEN) VE KULLANICI ADINI BURAYA YAPIŞTIRABILIRSIN:
 DEFAULT_GITHUB_USERNAME = ""
 DEFAULT_GITHUB_TOKEN = ""
 DEFAULT_GEMINI_API_KEY = ""
@@ -67,6 +66,9 @@ class GitHubProStudio(ctk.CTk):
         self.geometry("1180x800")
         self.minsize(1020, 720)
 
+        # İkon Yükleme Bölümü
+        self.set_app_icon()
+
         self.ensure_config_dir()
         self.config_data = self.load_json(CONFIG_FILE, {
             "username": DEFAULT_GITHUB_USERNAME,
@@ -99,6 +101,32 @@ class GitHubProStudio(ctk.CTk):
         except FileNotFoundError:
             if messagebox.askyesno("Git Kurulu Degil", "Bu uygulamanin calismasi icin bilgisayarinizda Git kurulu olmalidir.\n\nSimdi resmi indirme sayfasini acmak ister misiniz?"):
                 webbrowser.open("https://git-scm.com/downloads")
+
+    def set_app_icon(self):
+        """Çift tıklamayla veya exe ile çalışırken uygulama sol üst ve görev çubuğu ikonunu yükler"""
+        icon_name = "app_icon.ico"
+        
+        # PyInstaller'ın geçici dizin yolunu veya mevcut dizini bulur
+        if getattr(sys, 'frozen', False):
+            base_path = sys._MEIPASS
+        else:
+            base_path = os.path.dirname(os.path.abspath(__file__))
+            
+        icon_path = os.path.join(base_path, icon_name)
+        
+        # Eğer ikon o an dizinde yoksa yerel klasörden kontrol et
+        if not os.path.exists(icon_path):
+            icon_path = os.path.join(os.getcwd(), icon_name)
+
+        if os.path.exists(icon_path):
+            try:
+                # Windows & Linux / macOS uyumlu ikon yükleme
+                if sys.platform.startswith('win'):
+                    self.iconbitmap(icon_path)
+                else:
+                    self.iconphoto(False, ctk.CTkImage(icon_path))
+            except Exception:
+                pass # İkon yüklenemezse varsayılan pencere ile açılır
 
     def ensure_config_dir(self):
         if not os.path.exists(CONFIG_DIR):
