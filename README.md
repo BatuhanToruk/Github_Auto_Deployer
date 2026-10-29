@@ -43,7 +43,15 @@ Uygulamanın GitHub hesabınıza otomatik depo (repository) açabilmesi ve dosya
 * **Google GenAI SDK** (Yapay Zeka Destekli İçerik Üretimi)
 
 ---
+## ⚠️ Windows SmartScreen Uyarısı Hakkında (Önemli)
+Uygulamayı GitHub Releases üzerinden indirip ilk defa çalıştırmak istediğinizde Windows Defender SmartScreen kırmızı bir koruma ekranı gösterebilir[cite: 8]. 
 
+Bu durum, uygulamanın henüz yeni geliştirilmiş bağımsız bir yazılım olmasından kaynaklanır ve **kesinlikle hiçbir zararlı yazılım içermez**. Güvenle çalıştırmak için şu adımları izleyebilirsiniz:
+
+1. Uyarı penceresinin sol üst köşesinde yer alan **"Ek bilgi"** yazısına tıklayın[cite: 8].
+2. Açılan alt kısımda beliren gri renkli **"Yine de çalıştır"** butonuna tıklayın.
+3. Uygulamanız sorunsuz bir şekilde açılacaktır.
+   
 ## 📂 Uygulama Arayüz Mimarisi
 ```text
 📁 GitHub_Pro_Studio/
@@ -51,3 +59,4 @@ Uygulamanın GitHub hesabınıza otomatik depo (repository) açabilmesi ve dosya
   ├── 📄 github_auto_deployer.py # Ana kaynak kod
   ├── 📄 app_icon.ico          # Özel uygulama ve roket simgesi
   └── 📄 README.md             # Proje dokümantasyonu
+
