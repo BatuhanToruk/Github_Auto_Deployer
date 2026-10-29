@@ -44,11 +44,11 @@ Uygulamanın GitHub hesabınıza otomatik depo (repository) açabilmesi ve dosya
 
 ---
 ## ⚠️ Windows SmartScreen Uyarısı Hakkında (Önemli)
-Uygulamayı GitHub Releases üzerinden indirip ilk defa çalıştırmak istediğinizde Windows Defender SmartScreen kırmızı bir koruma ekranı gösterebilir[cite: 8]. 
+Uygulamayı GitHub Releases üzerinden indirip ilk defa çalıştırmak istediğinizde Windows Defender SmartScreen kırmızı bir koruma ekranı gösterebilir. 
 
 Bu durum, uygulamanın henüz yeni geliştirilmiş bağımsız bir yazılım olmasından kaynaklanır ve **kesinlikle hiçbir zararlı yazılım içermez**. Güvenle çalıştırmak için şu adımları izleyebilirsiniz:
 
-1. Uyarı penceresinin sol üst köşesinde yer alan **"Ek bilgi"** yazısına tıklayın[cite: 8].
+1. Uyarı penceresinin sol üst köşesinde yer alan **"Ek bilgi"** yazısına tıklayın.
 2. Açılan alt kısımda beliren gri renkli **"Yine de çalıştır"** butonuna tıklayın.
 3. Uygulamanız sorunsuz bir şekilde açılacaktır.
    
